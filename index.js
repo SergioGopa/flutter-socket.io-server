@@ -9,7 +9,12 @@ const app = express();
 
 //Node Server
 const server = require('http').createServer(app);
-module.exports.io  = require('socket.io')(server);
+module.exports.io  = require('socket.io')(server,{
+    cors:{
+        origin:"*",
+        methods:["GET","POST"]
+    }
+});
 
 require('./sockets/socket');
 

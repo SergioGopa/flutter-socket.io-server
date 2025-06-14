@@ -23,8 +23,20 @@
 
         socket.emit('mensaje',{nombre:'Sergio'})
 
-        socket.on('mensaje',function (payload) {
-            console.log('Escuchando:',payload)
+        // socket.on('mensaje',function (payload) {
+        //     console.log('Escuchando:',payload)
+            
+        // });
+
+        socket.on('nuevo-mensaje',function (payload) {
+            console.log('Escuchando 2:',payload)
+
+        });
+
+        socket.on('active-bands',function (bands) {
+            console.clear();
+            console.table(bands);
+
         });
 
 
